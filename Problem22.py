@@ -11,3 +11,28 @@ What is the total of all the name scores in the file?
 4. Multiply line number by sum of word.
 """
 
+name_list = []
+alphabet = ['a', 'b', 'c', 'd','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+names_sum = 0
+sum_of_name = 0
+
+with open("Problem22Names.txt") as file:
+    for line in file:
+        name_list.append(line.removesuffix("\",\n").strip("\""))
+
+def alphabetize(list):
+    list.sort()
+    return list
+
+name_list = alphabetize(name_list)
+
+print(name_list.index("COLIN")+1)
+
+
+for name in name_list:
+    for letter in name.lower():
+        sum_of_name += alphabet.index(letter)+1
+        names_sum += sum_of_name * (name_list.index(name)+1)
+        sum_of_name = 0
+
+print(names_sum)
