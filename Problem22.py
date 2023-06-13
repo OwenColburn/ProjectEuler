@@ -26,9 +26,6 @@ def alphabetize(list):
 
 name_list = alphabetize(name_list)
 
-print(name_list.index("COLIN")+1)
-
-
 for name in name_list:
     for letter in name.lower():
         sum_of_name += alphabet.index(letter)+1
